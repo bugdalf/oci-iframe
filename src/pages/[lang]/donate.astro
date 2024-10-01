@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const contactOptions = ["Inquiry", "Feedback", "Other"];
+---
+
+<Layout title={t("layout.test")} lang={lang}>
+  <main class="container mx-auto">
+    <section>
+      <h1>Donar</h1>
+
+      <p>Test de iframe para donar</p>
+      <iframe src="http://unionchilena.cl:8010/es/donate-iframe/?ministry=0d8f35a6-1aee-4bfc-bf6c-151e6b31c6a9&need=39&logo=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg0DV6IvUcLpvSW4qKDQpFPEUIBv-WtopT2Q&s" width="100%" height="1200"></iframe>
+
+    </section>
+  </main>
+</Layout>
